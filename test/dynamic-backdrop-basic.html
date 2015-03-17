@@ -21,24 +21,6 @@
 
     suite('<dynamic-backdrop>', function() {
 
-      test('defines the "author" property', function() {
-        assert.equal(myEl.author, 'Dimitri Glazkov');
-      });
-
-      test('says hello', function() {
-        assert.equal(myEl.sayHello(), 'dynamic-backdrop says, Hello World!');
-        var greetings = myEl.sayHello('greetings Earthlings');
-        assert.equal(greetings, 'dynamic-backdrop says, greetings Earthlings');
-      });
-
-      test('fires lasers', function(done) {
-        myEl.addEventListener('dynamic-backdrop-lasers-success', function(event) {
-          assert.equal(event.detail.sound, 'Pew pew pew!');
-          done();
-        });
-        myEl.fireLasers();
-      });
-
     });
   </script>
 
