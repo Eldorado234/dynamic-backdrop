@@ -8,7 +8,7 @@ This component also works for nested webcomponents, because it does not rely
 on the `z-index` css property to move a part of the website above the backdrop.
 It instead creates multiple backdrops around the target.
 
-The backdrop is restricted to the host element. This allows to just hilight an
+The backdrop is restricted to the host element. This allows to just hilight a
 sub-part of a specific area on the website. 
 
 ##### Example
