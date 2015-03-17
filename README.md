@@ -1,6 +1,6 @@
 # dynamic-backdrop
 
-`dynamic-backdrop` creates a backdrop around a target element.
+`dynamic-backdrop` is a web component to create a backdrop around a target element.
 This could be useful to hilight an specific part of the website by fading
 out anything around.
 
