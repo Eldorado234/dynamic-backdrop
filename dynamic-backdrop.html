@@ -35,7 +35,7 @@ sub-part of a specific area on the website.
       publish: {
         /**
          * The target element to wrap the background around. If set to null,
-         * the backdrop is hidden.
+         * the backdrop covers the whole host area.
          *
          * @attribute target
          * @type Element
@@ -52,6 +52,15 @@ sub-part of a specific area on the website.
          * @default document.body
          */
         host: document.body,
+
+        /**
+         * If the backdrop should be visible
+         *
+         * @attribute visible
+         * @type boolean
+         * @default true
+         */
+        visible: true
       },
       _createBackdropElement: function(target) {
         var elem = document.createElement('div');
@@ -60,7 +69,7 @@ sub-part of a specific area on the website.
         return elem;
       },
       targetChanged: function(oldTarget, newTarget) {
-        if (this.target) {
+        if (this.visible) {
           this._initBackdrop();
         } else {
           this._resetBackdrop();
@@ -68,7 +77,10 @@ sub-part of a specific area on the website.
         }
 
         var hostRect = this.host.getBoundingClientRect();
-        var targetRect = this.target.getBoundingClientRect();
+        var targetRect = {top: 0, right: 0, bottom: 0, left: 0, width: 0, height: 0}
+        if (this.target) {
+          targetRect = this.target.getBoundingClientRect();
+        }
 
         this.top.style.top = hostRect.top + 'px';
         this.top.style.right =  window.innerWidth - hostRect.right + 'px';
@@ -94,6 +106,9 @@ sub-part of a specific area on the website.
         this.left.style.left = hostRect.left + 'px';
       },
       hostChanged: function() {
+        this.targetChanged();
+      },
+      visibleChanged: function() {
         this.targetChanged();
       },
       _initBackdrop: function() {
