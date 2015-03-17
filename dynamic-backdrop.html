@@ -62,6 +62,9 @@ sub-part of a specific area on the website.
          */
         visible: true
       },
+      ready: function() {
+        this.targetChanged();
+      },
       _createBackdropElement: function(target) {
         var elem = document.createElement('div');
         elem.className = 'dynamic-backdrop';
