@@ -65,17 +65,17 @@
     <template is="auto-binding" id="template">
       <div class="container">
         <div id="example-1" on-click="{{example1}}">
-          Klick on me twice
+          Klick me twice
         </div>
         <div id="example-2" on-click="{{example2}}">
-           Klick on me, when I'm focused
+           Klick me, when I'm focused
         </div>
 
       </div>
       <div class="container">
         <div id="example-3-container">
            <div id="example-3" on-click="{{example3}}">
-            Klick on me twice
+            Klick me twice
           </div>
         </div>
 
@@ -100,7 +100,7 @@
         var backdrop = document.querySelector('#backdrop');
         backdrop.visible = true;
         if (backdrop.target == event.target) {
-          backdrop.target = document.querySelector('#example-2');;
+          backdrop.target = document.querySelector('#example-2');
         } else {
           backdrop.target = event.target;
         }
@@ -123,7 +123,7 @@
           backdrop.target = event.target;
         }
         backdrop.host = document.querySelector('#example-3-container');
-      }
+      };
 
       template.example4 = function(event) {
         var backdrop = document.querySelector('#backdrop');
@@ -133,7 +133,7 @@
         setTimeout(function(){
           backdrop.visible = false;
         }, 2000);
-      }
+      };
 
       template.example5 = function(event) {
         var backdrop = document.querySelector('#backdrop');
