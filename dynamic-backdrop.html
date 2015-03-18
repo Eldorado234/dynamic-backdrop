@@ -93,9 +93,18 @@ sub-part of a specific area on the website.
         }
 
         var hostRect = this.host.getBoundingClientRect();
-        var targetRect = {top: 0, right: 0, bottom: 0, left: 0, width: 0, height: 0}
+        var targetRect;
         if (this.target) {
           targetRect = this.target.getBoundingClientRect();
+        } else {
+          targetRect = {
+            top: hostRect.top, 
+            right: hostRect.left, 
+            bottom: hostRect.top, 
+            left: hostRect.left, 
+            width: 0, 
+            height: 0
+          }
         }
 
         this.top.style.top = hostRect.top + 'px';
