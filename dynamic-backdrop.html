@@ -97,16 +97,29 @@ sub-part of a specific area on the website.
         if (this.target) {
           targetRect = this.target.getBoundingClientRect();
         } else {
+          // Calculate center of current target area
+          var vertCenter = Math.ceil(
+            (parseFloat(this.bottom.style.top) + 
+             parseFloat(this.top.style.top) + 
+             parseFloat(this.top.style.height)) / 2
+          );
+          var horzCenter = Math.ceil(
+            (parseFloat(this.right.style.left) + 
+             parseFloat(this.left.style.left) + 
+             parseFloat(this.left.style.width)) / 2
+          );
+
           targetRect = {
-            top: hostRect.top, 
-            right: hostRect.left, 
-            bottom: hostRect.top, 
-            left: hostRect.left, 
+            top: vertCenter, 
+            right: horzCenter, 
+            bottom: vertCenter, 
+            left: horzCenter, 
             width: 0, 
             height: 0
           }
         }
 
+        // Create four backdrops around the target area
         this.top.style.top = hostRect.top + 'px';
         this.top.style.right =  window.innerWidth - hostRect.right + 'px';
         this.top.style.bottom = 'initial';
