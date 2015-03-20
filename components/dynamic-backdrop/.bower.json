@@ -1,0 +1,27 @@
+{
+  "name": "dynamic-backdrop",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components",
+    "backdrop"
+  ],
+  "main": "dynamic-backdrop.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/Eldorado234/dynamic-backdrop",
+  "_release": "c2c9f9909c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c2c9f9909ce582e3d6bc61bc280dc119d9112e78"
+  },
+  "_source": "git://github.com/Eldorado234/dynamic-backdrop.git",
+  "_target": "master",
+  "_originalSource": "Eldorado234/dynamic-backdrop",
+  "_direct": true
+}
