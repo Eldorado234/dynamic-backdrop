@@ -19,6 +19,5 @@ sub-part of a specific area on the website.
 
 1. Position of the backdrop is not updated, when `host` or `target` are moved
 1. Position of the backdrop is not updated on scroll
-1. Browser support has to be checked
 
 See the [component page](http://Eldorado234.github.io/dynamic-backdrop) for more information.
