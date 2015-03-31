@@ -110,8 +110,8 @@ sub-part of a specific area on the website.
           );
 
           targetRect = {
-            top: vertCenter,
-            right: horzCenter,
+            top: vertCenter ? vertCenter : 0,
+            right: horzCenter ? horzCenter : 0,
             bottom: vertCenter,
             left: horzCenter,
             width: 0,
